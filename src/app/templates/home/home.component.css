@@ -1,0 +1,98 @@
+.section-titulo {
+  background-color: #FDF5E6;
+}
+
+.section-titulo>div>h1 {
+  font-size: 16pt;
+  font-weight: bold;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+h3 {
+  font-size: 13pt;
+  margin-top: -30px;
+  margin-bottom: 30px;
+}
+
+figure {
+  display: flex;
+}
+
+figcaption {
+  margin-left: 1em;
+  margin-top: 1.5em;
+  text-align: justify;
+  cursor: pointer;
+}
+
+.h2-paises {
+  cursor: pointer;
+  font-size: 16pt;
+  font-weight: 300;
+  margin-bottom: -10px;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+.page-link {
+  color: black !important;
+  background-color: #dad8d8 !important;
+}
+
+.page-link:hover {
+  background-color: #9c9b9b !important;
+}
+
+#listing-pages /deep/ .ngx-pagination .current {
+  background: #FF914D;
+  border-radius: 5%;
+}
+
+#listing-pages /deep/ .ngx-pagination li a {
+  background-color: #f0f0f0;
+  border-radius: 5%;
+}
+
+#listing-pages /deep/ .ngx-pagination li a:hover {
+  background-color: #FF914D;
+  color: #fff;
+  border-radius: 5%;
+}
+
+#listing-pages /deep/ .ngx-pagination .pagination-previous {
+  background: #f0f0f0;
+  border-radius: 5%;
+  display:none;
+}
+
+#listing-pages /deep/ .ngx-pagination .pagination-next {
+  background: #f0f0f0;
+  border-radius: 5%;
+  display:none;
+}
+
+/* #listing-pages /deep/ .ngx-pagination .pagination-previous:hover {
+  background: #f0f0f0;
+  border-radius: 5%;
+}
+
+#listing-pages /deep/ .ngx-pagination .pagination-next:hover {
+  background: #f0f0f0;
+  border-radius: 5%;
+} */
+
+@media (min-width: 992px) {
+  .section-titulo {
+    background-color: #fff;
+  }
+
+  .section-titulo>div>h1 {
+    font-size: 25pt;
+    font-weight: 300;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+}

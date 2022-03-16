@@ -1,0 +1,35 @@
+#mobile-menu {
+  background-color: #4a4a4a;
+  padding-top: 2vh;
+  padding-bottom: 0.5vh;
+  padding-right: 2vh;
+  padding-left: 2vh;
+  position: relative;
+}
+
+#nav-list {
+  z-index: 1;
+  list-style-type: none;
+  text-align: left;
+  position: absolute;
+  top: 0;
+  background-color: #4a4a4a;
+  padding-right: 4em;
+  padding-bottom: 200%;
+}
+
+#nav-list i {
+  position: absolute;
+  color: #fff;
+  font-size: 22pt;
+  right: 0;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#nav-list li {
+  cursor: pointer;
+  font-size: 13pt;
+  color: #fff;
+  margin-bottom: 1vh;
+}

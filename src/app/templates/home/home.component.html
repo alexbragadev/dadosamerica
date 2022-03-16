@@ -1,0 +1,31 @@
+<section class="container">
+    <div class="row text-center section-titulo">
+        <div class="col-lg-12">
+            <h1 class="titulo-home">Países da américa do sul, norte, central e caribe.</h1>
+            <h3>Lista de países das américas, territórios, dados e informações.</h3>
+            <hr>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-lg-5 offset-lg-1 col-sm-12 md-2" *ngFor="let pais of paises | paginate: 
+                                                { id: 'listing-pages',
+                                                itemsPerPage: 6,
+                                                currentPage: page}">
+            <h2 class="h2-paises">{{pais.nome}}</h2>
+            <figure>
+                <img src="{{pais.img}}" alt="" width="90px" height="90px">
+                <figcaption>{{pais.descrisao}}</figcaption>
+            </figure>
+            <hr>
+        </div>
+        <div class="col-lg-12 text-center">
+            <pagination-controls id="listing-pages" [maxSize]="5" [directionLinks]="true"
+                                    (pageChange)="page = $event">
+            </pagination-controls>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,39 @@
+#search-body {
+  background-color: #b5b5b5;
+  padding: 0.5em;
+}
+
+#form-buscar {
+  display: flex;
+  background-color: #fff;
+  border-radius: 10px;
+  justify-content: space-around;
+}
+
+#form-buscar:hover {
+  box-shadow: 0 0 .5em #000;
+}
+
+#buscar {
+  border-radius: 10px;
+  border: 1px solid #fff;
+  outline: none;
+}
+
+#button-search {
+  background-color: #fff;
+  border: 1px #fff solid;
+  color: #000;
+}
+
+@media (min-width: 992px) {
+  #search-body {
+    background-color: #FF914D;
+  }
+
+  #form-buscar {
+    border-radius: 10px;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}

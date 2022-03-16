@@ -1,0 +1,76 @@
+#nav-list {
+  display: none;
+}
+
+div {
+  background-color: #FF914D;
+}
+
+.header-logo {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 280px;
+  height: 50px;
+}
+
+
+/* // Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { [width]="420" [height]="70" logo }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+  #header-section {
+    display: flex;
+    justify-content: space-around;
+    background-color: #FF914D;
+    padding-bottom: 2.5em;
+    padding-top: 2.5em;
+  }
+
+  .header-logo {
+    justify-content: center;
+  }
+
+  .logo {
+    width: 420px;
+    height: 70px;
+  }
+
+  app-menu {
+    display: none;
+  }
+
+  #nav-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding-bottom: 2em;
+    padding-top: 1em;
+  }
+
+  #nav-list li {
+    cursor: pointer;
+    font-size: 12pt;
+    color: #4a4a4a;
+    margin: .5em;
+  }
+
+  #nav-list li:hover {
+    color: #000;
+  }
+
+  #section-nav {
+    border-top: 1px solid #9c9b9b;
+    border-bottom: 1px solid #9c9b9b;
+    background-color: #f0f0f0;
+  }
+
+}
