@@ -1,22 +1,18 @@
 import { IPaises } from "./model/paises.model";
 import { Injectable } from "@angular/core";
-import { paises } from "./model/paises.mock";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 @Injectable(
     { providedIn: 'root' }
 )
 export class PaisesService {
-    paisesEntrada: IPaises[] = paises;
-    paisesSaida: any = [];
-    cont: number = 0;
+   
+    url = 'http://localhost:8080/paises/';
 
-    constructor() { }
+    constructor(private http: HttpClient) { }
 
-    getPaises(): any {
-        this.paisesEntrada.forEach(paises => {
-            this.paisesSaida[this.cont] = paises;
-            this.cont++;
-        })
-        return this.paisesSaida;
+    getAllPaises() : Observable<IPaises[]> {
+        return this.http.get<IPaises[]>(this.url + 'all');
     }
 }

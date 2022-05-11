@@ -1,5 +1,7 @@
 export interface IPaises {
+    id: number;
     nome: string;
-    img: string;
-    descrisao: string
+    urlImg: string;
+    descrisao: string;
+    paisCode: string;
 }
