@@ -13,8 +13,8 @@ div {
 }
 
 .logo {
-  width: 280px;
-  height: 50px;
+  width: 255px;
+  height: 36px;
 }
 
 
@@ -41,7 +41,7 @@ div {
 
   .logo {
     width: 420px;
-    height: 70px;
+    height: 60px;
   }
 
   app-menu {
