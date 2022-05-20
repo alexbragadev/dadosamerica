@@ -2,7 +2,7 @@
     <div class="row text-center section-titulo">
         <div class="col-lg-12">
             <h1 class="titulo-home">Países da américa do sul, norte, central e caribe.</h1>
-            <h3>Lista de países das américas, territórios, dados e informações.</h3>
+            <h3>Lista de países com seus territórios, dados e informações.</h3>
             <hr>
         </div>
     </div>
@@ -14,7 +14,7 @@
                                                 { id: 'listing-pages',
                                                 itemsPerPage: 6,
                                                 currentPage: page}">
-            <h2 class="h2-paises">{{pais.nome}}</h2>
+            <h2 class="h2-paises" (click)="selecionaPais(pais)">{{pais.nome}}</h2>
             <figure>
                 <img src="{{pais.urlImg}}" alt="" width="90px" height="90px">
                 <figcaption>{{pais.descrisao}}</figcaption>
@@ -28,4 +28,5 @@
         </div>
     </div>
 </section>
+
 

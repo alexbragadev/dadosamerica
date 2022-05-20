@@ -3,28 +3,33 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './templates/header/header.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { SearchComponent } from './components/search/search.component';
 import { HomeComponent } from './templates/home/home.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { InformacoesPaisModule } from './templates/informacoes-pais/informacoes-pais.module';
+import { HeaderModule } from './components/header/header.module';
+import { MenuModule } from './components/menu/menu.module';
+import { SearchModule } from './components/search/search.module';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeModule } from './templates/home/home.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    MenuComponent,
-    SearchComponent,
-    HomeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     NgxPaginationModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    InformacoesPaisModule,
+    HeaderModule,
+    MenuModule,
+    SearchModule,
+    HomeModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

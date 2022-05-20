@@ -1,0 +1,30 @@
+<section class="container">
+    <div class="row section-titulo justify-content-md-center">
+        <div class="col-lg-6 col-sm-12">
+            <h1>{{paisSelecionado?.nome}}</h1>
+            <h3>{{paisSelecionado?.descrisao}}</h3>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-lg-6 col-sm-12">
+            <div class="cabecalho-info">
+                <img src="{{paisSelecionado?.urlImg}}" alt="" width="200px" height="200px">
+                <img src="{{paisSelecionado?.urlImg}}" alt="" width="200px" height="200px">
+            </div>
+        </div>
+    </div>
+
+</section>
+
+Área:
+{{paisJsonInfo[0].area.total}} + km2
+{{paisJsonInfo[0].localizacao.regiaointermediaria.nome}}
+{{paisJsonInfo[0].governo.capital.nome}}
+{{paisJsonInfo[0].linguas[0].nome}}
+{{populacaoPais}}
+{{paisJsonInfo[0].unidadesmonetarias[0].nome}}
+{{paisJsonInfo[0].historico}}
+
+
