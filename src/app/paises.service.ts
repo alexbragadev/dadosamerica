@@ -13,6 +13,7 @@ export class PaisesService {
    
     url = 'http://localhost:8080/paises';
     urlInfoPais = 'https://servicodados.ibge.gov.br/api/v1/paises';
+    urlCidadesPais = 'http://www.geonames.org/childrenJSON?geonameId';
 
     constructor(private http: HttpClient) { }
 
@@ -34,5 +35,9 @@ export class PaisesService {
 
     getIndicadoresPais() {
         return this.http.get(`${ this.urlInfoPais }/${this.pais?.sigla}/indicadores`);
+    }
+
+    getCidadesPorCodPais() {
+        return this.http.get(`${ this.urlCidadesPais }=${this.pais?.countryId}`);
     }
 }

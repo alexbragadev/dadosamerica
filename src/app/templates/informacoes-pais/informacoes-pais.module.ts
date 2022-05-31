@@ -7,6 +7,9 @@ import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { InformacoesPaisComponent } from './informacoes-pais.component';
 import { HeaderModule } from 'src/app/components/header/header.module';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -16,13 +19,15 @@ import { RouterModule } from '@angular/router';
     InformacoesPaisComponent
   ],
   imports: [
+    CurrencyMaskModule,
     BrowserModule,
     BrowserAnimationsModule,
     NgxPaginationModule,
     FormsModule,
     HttpClientModule,
     HeaderModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    NgxMaskModule.forChild()
   ],
   providers: [],
   bootstrap: []

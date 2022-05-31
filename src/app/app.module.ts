@@ -13,6 +13,7 @@ import { MenuModule } from './components/menu/menu.module';
 import { SearchModule } from './components/search/search.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './templates/home/home.module';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HomeModule } from './templates/home/home.module';
     MenuModule,
     SearchModule,
     HomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

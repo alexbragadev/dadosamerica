@@ -1,6 +1,6 @@
 <section class="container">
     <div class="row section-titulo justify-content-md-center">
-        <div class="col-lg-6 col-sm-12">
+        <div class="col-lg-8 col-sm-12">
             <h1>{{paisSelecionado?.nome}}</h1>
             <h3>{{paisSelecionado?.descrisao}}</h3>
             <hr>
@@ -8,23 +8,77 @@
     </div>
 
     <div class="row justify-content-md-center">
-        <div class="col-lg-6 col-sm-12">
+        <div class="col-lg-8 col-sm-12">
             <div class="cabecalho-info">
                 <img src="{{paisSelecionado?.urlImg}}" alt="" width="200px" height="200px">
-                <img src="{{paisSelecionado?.urlImg}}" alt="" width="200px" height="200px">
+                <div>
+                    <h3 id="dados">DADOS GERAIS:</h3>
+                    <h4 class="info-dados-gerais">Área: {{areaTotalString}}</h4>
+                    <h4 class="info-dados-gerais">Localização: {{paisJsonInfo[0].localizacao.regiaointermediaria.nome}}</h4>
+                    <h4 class="info-dados-gerais">Capital: {{paisJsonInfo[0].governo.capital.nome}}</h4>
+                    <h4 class="info-dados-gerais">População {{populacaoFormatadaString}} (2020)</h4>
+                    <h4 class="info-dados-gerais">Idioma(s): {{idioma}}</h4>
+                    <h4 class="info-dados-gerais">PIB: US$ {{pibTotal}} (2020)</h4>
+                    <h4 class="info-dados-gerais">PIB per capita: US$ {{pibPerCapta}} (2020)</h4>
+                    <h4 class="info-dados-gerais">Moeda: {{paisJsonInfo[0].unidadesmonetarias[0].nome}}</h4>
+                </div>
             </div>
         </div>
     </div>
 
+    <div class="row justify-content-md-center">
+        <div class="col-lg-8 col-sm-12">
+            <hr>
+            <h3 id="dados">CIDADES:</h3>
+            <div id="cidades-div" *ngFor="let cidades of cidadesDoPaisArray">
+                <h4 class="info-dados-gerais">{{cidades}} </h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-lg-8 col-sm-12">
+            <hr>
+            <h3 id="dados">ECONOMIA, SAÚDE, EDUCAÇÃO E CIÊNCIA:</h3>
+            
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-lg-8 col-sm-12">
+            <hr>
+            <h3 id="dados">INDICADORES SOCIAIS:</h3>
+            
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-lg-8 col-sm-12">
+            <hr>
+            <h3 id="dados">REDES:</h3>
+            
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-lg-8 col-sm-12">
+            <hr>
+            <h3 id="dados">HISTÓRIA:</h3>
+            <div *ngIf="!showConteudoTexto" class="conteudo-historia">
+                {{historiaConteudo}} 
+                <span class="texto-marcado" 
+                (click)="openConteudoTexto()">
+                leia-mais
+                </span> 
+            </div>
+            <div *ngIf="showConteudoTexto" class="conteudo-historia">
+                {{this.paisJsonInfo[0].historico}} 
+            </div>
+        </div>
+    </div>
 </section>
 
-Área:
-{{paisJsonInfo[0].area.total}} + km2
-{{paisJsonInfo[0].localizacao.regiaointermediaria.nome}}
-{{paisJsonInfo[0].governo.capital.nome}}
-{{paisJsonInfo[0].linguas[0].nome}}
-{{populacaoPais}}
-{{paisJsonInfo[0].unidadesmonetarias[0].nome}}
-{{paisJsonInfo[0].historico}}
 
 
+Meio ambiente
+Demografia

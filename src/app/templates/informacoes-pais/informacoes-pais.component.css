@@ -16,6 +16,38 @@ h3 {
     justify-content: space-evenly;
 }
 
+#dados {
+  margin-top: 5px;
+  font-size: 14pt;
+  font-weight: bold;
+  color: #636363;
+} 
+
+.info-dados-gerais{
+  font-size: 13pt;
+  font-weight: 300;
+}
+
+#cidades-div {
+  display: inline flow-root list-item;
+  margin-right: 25px;
+}
+
+.conteudo-historia {
+  position: relative;
+  display: flex;
+  text-align: justify;
+}
+
+.texto-marcado {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
 @media (min-width: 992px) {
   
     .section-titulo>div>h1 {
