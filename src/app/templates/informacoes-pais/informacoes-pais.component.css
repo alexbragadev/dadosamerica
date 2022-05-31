@@ -29,7 +29,7 @@ h3 {
 }
 
 #cidades-div {
-  display: inline flow-root list-item;
+  display: inline-block;
   margin-right: 25px;
 }
 

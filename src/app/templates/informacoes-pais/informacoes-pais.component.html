@@ -16,7 +16,7 @@
                     <h4 class="info-dados-gerais">Área: {{areaTotalString}}</h4>
                     <h4 class="info-dados-gerais">Localização: {{paisJsonInfo[0].localizacao.regiaointermediaria.nome}}</h4>
                     <h4 class="info-dados-gerais">Capital: {{paisJsonInfo[0].governo.capital.nome}}</h4>
-                    <h4 class="info-dados-gerais">População {{populacaoFormatadaString}} (2020)</h4>
+                    <h4 class="info-dados-gerais">População: {{populacaoFormatadaString}} (2020)</h4>
                     <h4 class="info-dados-gerais">Idioma(s): {{idioma}}</h4>
                     <h4 class="info-dados-gerais">PIB: US$ {{pibTotal}} (2020)</h4>
                     <h4 class="info-dados-gerais">PIB per capita: US$ {{pibPerCapta}} (2020)</h4>
@@ -31,7 +31,7 @@
             <hr>
             <h3 id="dados">CIDADES:</h3>
             <div id="cidades-div" *ngFor="let cidades of cidadesDoPaisArray">
-                <h4 class="info-dados-gerais">{{cidades}} </h4>
+                <h4 class="info-dados-gerais">{{cidades}}, </h4>
             </div>
         </div>
     </div>
@@ -39,8 +39,14 @@
     <div class="row justify-content-md-center">
         <div class="col-lg-8 col-sm-12">
             <hr>
-            <h3 id="dados">ECONOMIA, SAÚDE, EDUCAÇÃO E CIÊNCIA:</h3>
-            
+            <h3 id="dados">ECONOMIA, SAÚDE E EDUCAÇÃO:</h3>
+            Chegada de Turistas
+            Total de exportações
+            Total de importações
+            Taxa de matrícula em todos os níveis
+            Taxa de alfabetização a partir de 15 anos de idade
+            Consumo calórico
+            Incidência de subnutrição
         </div>
     </div>
 
@@ -48,7 +54,10 @@
         <div class="col-lg-8 col-sm-12">
             <hr>
             <h3 id="dados">INDICADORES SOCIAIS:</h3>
-            
+            Espectativa de vida
+            IDH
+            Taxa de natalidade
+            taxa de mortalidade
         </div>
     </div>
 
@@ -56,7 +65,8 @@
         <div class="col-lg-8 col-sm-12">
             <hr>
             <h3 id="dados">REDES:</h3>
-            
+            Assinaturas de telefonia celular
+            Percentual de usuários de Interne
         </div>
     </div>
 
