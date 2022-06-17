@@ -23,7 +23,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.paisesService.getAllPaises().subscribe((data: IPaises[]) => {
       this.paises = data;
-    });
+      }, (err) => {
+        console.log(err);
+      });
   }
 
   selecionaPais(pais: IPaises){

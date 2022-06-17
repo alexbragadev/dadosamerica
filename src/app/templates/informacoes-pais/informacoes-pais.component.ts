@@ -23,10 +23,26 @@ export class InformacoesPaisComponent implements OnInit {
   areaTotalString: string = "";
   areaTotalNumber: number = 0;
   idioma: string = "";
+  
   pibPerCapta: string = "";
   pibPerCaptaN: number = 0;
   pibTotal: string = "";
   pibTotalN: number = 0;
+  turistasTotal: string = "";
+  turistasTotalN: number = 0;
+  exportacoesTotal: string = "";
+  exportacoesTotalN: number = 0;
+  importacoesTotal: string = "";
+  importacoesTotalN: number = 0;
+  matriculasTotal: string = "";
+  alfabetizacaoTotal: string = "";
+  subnutricaoTotal: string = "";
+  expectativaTotal: string = "";
+  idhTotal: string = "";
+  natalidadeTotal: string = "";
+  mortalidadeTotal: string = "";
+  assinaturasTotal: string = "";
+  percentualTotal: string = "";
   
   showConteudoTexto: boolean = false;
   showModalError: boolean = false;
@@ -82,6 +98,69 @@ export class InformacoesPaisComponent implements OnInit {
             this.pibTotal = this.pibTotal.slice(9, -2);
             this.pibTotalN = parseInt(this.pibTotal);
             this.pibTotal = (this.pibTotalN).toLocaleString('pt-BR');
+          }
+          else if (items.indicador === "Economia - Chegada de turistas") {
+            this.turistasTotal = JSON.stringify(items.series[0].serie[48]);
+            this.turistasTotal = this.turistasTotal.slice(9, -2);
+            this.turistasTotalN = parseInt(this.turistasTotal);
+            this.turistasTotal = (this.turistasTotalN).toLocaleString('pt-BR');
+          }
+          else if (items.indicador === "Economia - Total de exportações") {
+            this.exportacoesTotal = JSON.stringify(items.series[0].serie[48]);
+            this.exportacoesTotal = this.exportacoesTotal.slice(9, -2);
+            this.exportacoesTotalN = parseInt(this.exportacoesTotal);
+            this.exportacoesTotal = (this.exportacoesTotalN).toLocaleString('pt-BR');
+          }
+          else if (items.indicador === "Economia - Total de importações") {
+            this.importacoesTotal = JSON.stringify(items.series[0].serie[48]);
+            this.importacoesTotal = this.importacoesTotal.slice(9, -2);
+            this.importacoesTotalN = parseInt(this.importacoesTotal);
+            this.importacoesTotal = (this.importacoesTotalN).toLocaleString('pt-BR');
+          }
+          //matriculas %
+          else if (items.id === 77835) {
+            this.matriculasTotal = JSON.stringify(items.series[0].serie[49]);
+            this.matriculasTotal = this.matriculasTotal.slice(9, -2);
+          } 
+          // alfabetização %
+          else if (items.id === 77836) {
+            this.alfabetizacaoTotal = JSON.stringify(items.series[0].serie[49]);
+            this.alfabetizacaoTotal = this.alfabetizacaoTotal.slice(9, -2);
+          }
+          // subnutrição %
+          else if (items.id === 77834) {
+            this.subnutricaoTotal = JSON.stringify(items.series[0].serie[47]);
+            this.subnutricaoTotal = this.subnutricaoTotal.slice(9, -2);
+          }
+          // expectativa de vida
+          else if (items.id === 77830) {
+            this.expectativaTotal = JSON.stringify(items.series[0].serie[48]);
+            this.expectativaTotal = this.expectativaTotal.slice(9, -2);
+          }
+          // idh %
+          else if (items.id === 77831) {
+            this.idhTotal = JSON.stringify(items.series[0].serie[48]);
+            this.idhTotal = this.idhTotal.slice(9, -2);
+          }
+          // Taxa de natalidade por mil
+          else if (items.id === 77851) {
+            this.natalidadeTotal = JSON.stringify(items.series[0].serie[48]);
+            this.natalidadeTotal = this.natalidadeTotal.slice(9, -2);
+          }
+          // mortalidade por mil
+          else if (items.id === 77850) {
+            this.mortalidadeTotal = JSON.stringify(items.series[0].serie[48]);
+            this.mortalidadeTotal = this.mortalidadeTotal.slice(9, -2);
+          }
+          // Assinaturas de telefonia celular a cada 100 habitantes
+          else if (items.id === 77854) {
+            this.assinaturasTotal = JSON.stringify(items.series[0].serie[48]);
+            this.assinaturasTotal = this.assinaturasTotal.slice(9, -2);
+          }
+          // Percentual de usuários de Internet %
+          else if (items.id === 77857) {
+            this.percentualTotal = JSON.stringify(items.series[0].serie[48]);
+            this.percentualTotal = this.percentualTotal.slice(9, -2);
           }
         }
       }, (err) => {
