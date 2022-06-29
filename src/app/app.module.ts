@@ -14,10 +14,14 @@ import { SearchModule } from './components/search/search.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './templates/home/home.module';
 import { NgxMaskModule } from 'ngx-mask';
+import { EconomiaComponent } from './templates/economia/economia.component';
+import { SaudeComponent } from './templates/saude/saude.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EconomiaComponent,
+    SaudeComponent
   ],
   imports: [
     BrowserModule,

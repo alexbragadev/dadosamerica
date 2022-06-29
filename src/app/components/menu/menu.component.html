@@ -6,14 +6,14 @@
                                     'cursor': 'pointer'}">
     </div>
 </div>
-
+<!-- menu mobile -->
 <nav #nav_menu_mobile [ngStyle]="{'display': display}">
     <ul id="nav-list">
         <i class="bi bi-x-circle-fill" (click)="fecharMenu()"></i>
-        <li>Home</li>
+        <li [routerLink]="['/home']" routerLinkActive="router-link-active">Home</li>
         <li>Cultura</li>
-        <li>Economia</li>
-        <li>Saúde</li>
+        <li [routerLink]="['/economia']" routerLinkActive="router-link-active">Economia</li>
+        <li [routerLink]="['/saude']" routerLinkActive="router-link-active">Saúde</li>
         <li>Educação</li>
         <li>Política</li>
         <li>Geografia</li>

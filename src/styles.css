@@ -2,3 +2,20 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+p {
+    text-align: justify;
+    text-indent: 2em;
+    font-size: 13pt;
+    font-weight: 300;
+    line-height: 2;
+}
+
+h3 {
+    margin-top: 5px;
+    font-size: 14pt;
+    font-weight: bold;
+    color: #636363;
+} 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

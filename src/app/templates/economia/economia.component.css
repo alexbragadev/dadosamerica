@@ -1,0 +1,55 @@
+.section-titulo {
+    background-color: #FDF5E6;
+  }
+  
+.section-titulo>div>h1 {
+    font-size: 16pt;
+    font-weight: bold;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.atividades {
+    justify-content: center;
+    display: flex;
+    float: left;
+}
+
+.imagem {
+    margin: .8em;
+}
+
+.texto-economia {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.dados {
+    margin-top: 5px;
+    margin-bottom: 30px;
+    font-size: 14pt;
+    font-weight: bold;
+    color: #636363;
+  } 
+
+.card-atividades{
+    border: 1px solid #fff;
+    padding: 1em;
+    box-shadow: 0.8px 0.5px 3px 1px #DCDCDC;
+    border-radius: 0.3em;
+    box-sizing: border-box;
+    width: 80%;
+}
+
+@media (min-width: 992px) {
+    .section-titulo {
+        background-color: #fff;
+    }
+
+    .section-titulo>div>h1 {
+        font-size: 25pt;
+        font-weight: 300;
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+    }
+}

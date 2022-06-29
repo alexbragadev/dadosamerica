@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { NgxMaskModule } from 'ngx-mask';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { NgxMaskModule } from 'ngx-mask';
     HttpClientModule,
     HeaderModule,
     HttpClientJsonpModule,
+    MatProgressSpinnerModule,
     NgxMaskModule.forChild()
   ],
   providers: [],

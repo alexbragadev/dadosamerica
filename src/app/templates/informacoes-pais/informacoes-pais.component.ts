@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { IPaises } from 'src/app/model/paises.model';
 import { PaisesService } from 'src/app/paises.service';
+import $ from 'jquery';
+import { ThemePalette } from '@angular/material/core';
+import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'informacoes-pais',
@@ -8,6 +11,10 @@ import { PaisesService } from 'src/app/paises.service';
   styleUrls: ['./informacoes-pais.component.css']
 })
 export class InformacoesPaisComponent implements OnInit {
+
+  color: ThemePalette = 'warn';
+  mode: ProgressSpinnerMode = 'indeterminate';
+  value = 50;
 
   paisSelecionado?: IPaises;
   paisJsonInfo: any;
@@ -23,6 +30,10 @@ export class InformacoesPaisComponent implements OnInit {
   areaTotalString: string = "";
   areaTotalNumber: number = 0;
   idioma: string = "";
+  localizacao: string = "";
+  capital: string = "";
+  moeda: string = "";
+  historico: string = "";
   
   pibPerCapta: string = "";
   pibPerCaptaN: number = 0;
@@ -50,15 +61,15 @@ export class InformacoesPaisComponent implements OnInit {
   constructor(private paisesService: PaisesService) {
     
   }
+
     ngOnInit(){
       // informações da aplicação sobre o país
       this.paisSelecionado = this.paisesService.getPaisSelecionado();
-  
+
       this.SearchInfoPais();
       this.SearchIndicadoresPais();
       this.SearchCidadesPais();
     }
-
     SearchInfoPais() {
       // informações da requisição a um objeto json externo
       this.paisesService.getInfoPais().subscribe(response => {
@@ -66,11 +77,15 @@ export class InformacoesPaisComponent implements OnInit {
         this.paisJsonInfoFormatado = this.paisJsonInfo.replace("unidades-monetarias", "unidadesmonetarias");
         this.paisJsonInfoFormatado = this.paisJsonInfoFormatado.replace("regiao-intermediaria", "regiaointermediaria");
         this.paisJsonInfo = JSON.parse(this.paisJsonInfoFormatado);
+        this.localizacao = this.paisJsonInfo[0].localizacao.regiaointermediaria.nome;
+        this.capital = this.paisJsonInfo[0].governo.capital.nome;
+        this.moeda = this.paisJsonInfo[0].unidadesmonetarias[0].nome;
         this.areaTotalString = this.paisJsonInfo[0].area.total;
         this.areaTotalNumber = parseInt(this.areaTotalString);
         this.areaTotalString = (this.areaTotalNumber).toLocaleString('pt-BR') + " km²";
         this.idioma = this.paisJsonInfo[0].linguas[0].nome.charAt(0).toUpperCase() + this.paisJsonInfo[0].linguas[0].nome.slice(1);
-        this.historiaConteudo = this.paisJsonInfo[0].historico.substr(0, 560)+" ...";
+        this.historiaConteudo = this.paisJsonInfo[0].historico.substr(0, 550)+" ...";
+        this.historico = this.paisJsonInfo[0].historico;
       }, (err) => {
         this.showModalError = true;
       });
@@ -171,18 +186,19 @@ export class InformacoesPaisComponent implements OnInit {
     
     SearchCidadesPais() {
       // informações da requisição a um objeto json externo
-      this.paisesService.getCidadesPorCodPais().subscribe(response => {
-        this.cidadesDoPaisJson = response;
-
-        this.cidadesDoPaisArray = [];
-
-        for (let x = 0; x < this.cidadesDoPaisJson.totalResultsCount; x++) {
-          this.cidadesDoPaisArray.push(this.cidadesDoPaisJson.geonames[x].adminName1);
-        }
-
-      }, (err) => {
-        this.showModalError = true
-      });
+      setTimeout(() => {
+        this.paisesService.getCidadesPorCodPais().subscribe(response => {
+          this.cidadesDoPaisJson = response;
+  
+          this.cidadesDoPaisArray = [];
+  
+          for (let x = 0; x < this.cidadesDoPaisJson.totalResultsCount; x++) {
+            this.cidadesDoPaisArray.push(this.cidadesDoPaisJson.geonames[x].adminName1);
+          }
+        }, (err) => {
+          this.showModalError = true
+        });
+      },500);    
     }
 
     openConteudoTexto() {

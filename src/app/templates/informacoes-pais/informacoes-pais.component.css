@@ -16,7 +16,7 @@ h3 {
     justify-content: space-evenly;
 }
 
-#dados {
+.dados {
   margin-top: 5px;
   font-size: 14pt;
   font-weight: bold;
@@ -46,6 +46,25 @@ h3 {
   text-decoration: underline;
   color: blue;
   cursor: pointer;
+  font-size: 13pt;
+  font-weight: 300;
+  line-height: 4;
+}
+
+.example-margin {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#dados-loading{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.historia {
+  margin-bottom: 80px;
 }
 
 @media (min-width: 992px) {

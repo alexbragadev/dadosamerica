@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header.component';
 import { MenuModule } from '../menu/menu.module';
 import { SearchModule } from '../search/search.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SearchModule } from '../search/search.module';
     FormsModule,
     HttpClientModule,
     MenuModule,
-    SearchModule
+    SearchModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: []
