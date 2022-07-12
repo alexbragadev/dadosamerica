@@ -10,13 +10,19 @@
     <div class="row justify-content-md-center" *ngIf="this.cidadesDoPaisJson; else loading">
         <div class="col-lg-8 col-sm-12">
             <div class="cabecalho-info">
-                <img src="{{paisSelecionado?.urlImg}}" alt="" width="200px" height="200px">
+                <img 
+                    [src]="paisSelecionado?.urlImg" 
+                    [title]="paisSelecionado?.nome" 
+                    alt="" 
+                    [style.width.px]="width"
+                    [style.height.px]="height"
+                />
                 <div>
                     <h3 class="dados">DADOS GERAIS:</h3>
                     <h4 class="info-dados-gerais">Área: {{areaTotalString}}</h4>
                     <h4 class="info-dados-gerais">Localização: {{localizacao}}</h4>
                     <h4 class="info-dados-gerais">Capital: {{capital}}</h4>
-                    <h4 class="info-dados-gerais">População: {{populacaoFormatadaString }} (2020)</h4>
+                    <h4 class="info-dados-gerais">População: {{ populacaoFormatadaString }} (2020)</h4>
                     <h4 class="info-dados-gerais">Idioma(s): {{idioma}}</h4>
                     <h4 class="info-dados-gerais">PIB: US$ {{pibTotal}} (2020)</h4>
                     <h4 class="info-dados-gerais">PIB per capita: US$ {{pibPerCapta}} (2020)</h4>

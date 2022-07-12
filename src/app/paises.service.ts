@@ -23,7 +23,11 @@ export class PaisesService {
         ) { }
 
     getAllPaises() : Observable<IPaises[]> {
-        return this.http.get<IPaises[]>(`${ this.url }/all`);
+        return this.http.get<IPaises[]>(`${ this.url }/all`)
+        // não conseguir usar com o pipe e map tenho que ver depois o que é isso
+        // .pipe(
+        //     map((response: any) => response.data)
+        // );
     }
 
     recebePaisSelecionado(pais: IPaises) {
@@ -35,11 +39,7 @@ export class PaisesService {
     }
 
     getInfoPais(): Observable<any[]> {
-        return this.http.get<any[]>(`${ this.urlInfoPais }/${this.pais?.sigla}`)
-        .pipe(
-            tap(_ => this.log('oi')),
-            catchError(this.handleError<any>('updateHero'))
-          );
+        return this.http.get<any[]>(`${ this.urlInfoPais }/${this.pais?.sigla}`);
     }
 
     getIndicadoresPais() {
@@ -47,32 +47,30 @@ export class PaisesService {
     }
 
     getCidadesPorCodPais() {
-        return this.http.get(`${ this.urlCidadesPais }=${this.pais?.countryId}`);
+        return this.http.get(`${ this.urlCidadesPais }=${this.pais?.countryId}`)
+        // .pipe(
+        //     map((response: any) => response.data)
+        // );
     }
 
-        /**
-     * Handle Http operation that failed.
-     * Let the app continue.
-     *
-     * @param operation - name of the operation that failed
-     * @param result - optional value to return as the observable result
-     */
-    private handleError<T>(operation = 'operation', result?: T) {
-        return (error: any): Observable<T> => {
-
-        // TODO: send the error to remote logging infrastructure
-        console.error(error); // log to console instead
-
-        // TODO: better job of transforming error for user consumption
-        this.log(`${operation} failed: ${error.message}`);
-
-        // Let the app keep running by returning an empty result.
-        return of(result as T);
-        };
-    }
 
     /** Log a HeroService message with the MessageService */
-    private log(message: string) {
-        this.messageService.add(`HeroService: ${message}`);
-    }
+//     private log(message: string) {
+//         this.messageService.add(`HeroService: ${message}`);
+//     }
+
+//     const subscription = this.service.getAll()
+//   .subscribe(
+//     (data) => this.onSuccess(data),
+//     (error) => this.handleError(error)
+//   );
+
+// subscription.add(() => this.stopLoading());
+
+// this.service.getAll()
+// .subscribe(
+//     data => this.onSuccess(data),
+//     error => this.handleError(error),
+//     () => this.onComplete()
+// );
 }

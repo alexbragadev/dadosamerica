@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { IPaises } from 'src/app/model/paises.model';
 import { PaisesService } from 'src/app/paises.service';
 import { InformacoesPaisComponent } from '../informacoes-pais/informacoes-pais.component';
@@ -9,10 +10,12 @@ import { InformacoesPaisComponent } from '../informacoes-pais/informacoes-pais.c
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
   paises: IPaises[] = [];
   showInfo: boolean =  false;
+
+  getPaisesSubscription?: Subscription;
 
   page: number = 1;
 
@@ -21,11 +24,16 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.paisesService.getAllPaises().subscribe((data: IPaises[]) => {
+    this.getPaisesSubscription = this.paisesService.getAllPaises().subscribe((data: IPaises[]) => {
       this.paises = data;
+      this.showInfo = true;
       }, (err) => {
-        console.log(err);
+        console.log("erro lista países " + err);
       });
+  }
+
+  ngOnDestroy() {
+    this.getPaisesSubscription?.unsubscribe();
   }
 
   selecionaPais(pais: IPaises){
