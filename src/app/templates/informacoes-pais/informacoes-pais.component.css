@@ -67,6 +67,17 @@ h3 {
   margin-bottom: 80px;
 }
 
+mat-option {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 100;
+}
+
+mat-form-field {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 100;
+  margin-left: 2em;
+}
+
 @media (min-width: 992px) {
   
     .section-titulo>div>h1 {

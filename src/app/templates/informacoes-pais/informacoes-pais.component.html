@@ -48,12 +48,36 @@
         <div class="col-lg-8 col-sm-12">
             <hr>
             <h3 class="dados">ECONOMIA, SAÚDE E EDUCAÇÃO:</h3>
-            <p>Chegada de Turistas {{turistasTotal}}</p>
-            <p>Total de exportações US$ {{exportacoesTotal}}</p>
-            <p>Total de importações US$ {{importacoesTotal}}</p>
-            <p>Taxa de matrícula em todos os níveis % {{matriculasTotal}}</p>
-            <p>Taxa de alfabetização a partir de 15 anos de idade % {{alfabetizacaoTotal}}</p>
-            <p>Incidência de subnutrição % {{subnutricaoTotal}}</p>
+            <p>Chegada de Turistas: {{turistasTotal}}</p>
+            <p>Total de exportações US$: {{exportacoesTotal}}</p>
+            <p>Total de importações US$: {{importacoesTotal}}</p>
+            <p>Incidência de subnutrição % por ano:</p>
+            <mat-form-field appearance="fill" [color]="color" [style.width.px]="widthComboBox">
+            <mat-label>Selecione</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let item of subnutricao" [value]="item.value">
+                {{item.viewValue}}
+                </mat-option>
+            </mat-select>
+            </mat-form-field>
+            <p>Taxa de matrícula em todos os níveis % por ano:</p>
+            <mat-form-field appearance="fill" [color]="color" [style.width.px]="widthComboBox">
+            <mat-label>Selecione</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let item of matriculas" [value]="item.value">
+                {{item.viewValue}}
+                </mat-option>
+            </mat-select>
+            </mat-form-field>
+            <p>Taxa de alfabetização a partir de 15 anos de idade % por ano:</p>
+            <mat-form-field appearance="fill" [color]="color" [style.width.px]="widthComboBox">
+            <mat-label>Selecione</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let item of alfabetizacao" [value]="item.value">
+                {{item.viewValue}}
+                </mat-option>
+            </mat-select>
+            </mat-form-field>
         </div>
     </div>
 
@@ -61,10 +85,10 @@
         <div class="col-lg-8 col-sm-12">
             <hr>
             <h3 class="dados">INDICADORES SOCIAIS:</h3>
-            <p>Espectativa de vida {{expectativaTotal}}</p>
-            <p>IDH {{idhTotal}}</p>
-            <p>Taxa de natalidade % {{natalidadeTotal}}</p>
-            <p>taxa de mortalidade % {{mortalidadeTotal}}</p>
+            <p>Espectativa de vida: {{expectativaTotal}}</p>
+            <p>IDH: {{idhTotal}}</p>
+            <p>Taxa de natalidade: {{natalidadeTotal}}%</p>
+            <p>taxa de mortalidade: {{mortalidadeTotal}}%</p>
         </div>
     </div>
 
@@ -72,8 +96,8 @@
         <div class="col-lg-8 col-sm-12">
             <hr>
             <h3 class="dados">REDES:</h3>
-            <p>Assinaturas de telefonia celular a cada 100 habitantes {{assinaturasTotal}}</p>
-            <p>Percentual de usuários de Internet % {{percentualTotal}}</p>
+            <p>Assinaturas de telefonia celular a cada 100 habitantes: {{assinaturasTotal}}</p>
+            <p>Percentual de usuários de Internet: {{percentualTotal}}%</p>
         </div>
     </div>
 

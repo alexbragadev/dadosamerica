@@ -7,7 +7,8 @@ import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
 import { empty, map, startWith, Subscription } from 'rxjs';
 import { SubSink } from 'subsink';
 import { LocalStorageService } from 'src/app/local-storage.service';
-import { indicadoresPaisFormt } from './indicadores-pais-format';
+import { comboBox } from './comboBox.interface';
+import { LiteralArray } from '@angular/compiler';
 
 const CACHE_KEY = 'httpCidadesCache';
 
@@ -24,6 +25,7 @@ export class InformacoesPaisComponent implements OnInit, OnDestroy {
 
   width = 200;
   height = 200;
+  widthComboBox = 350;
 
   paisSelecionado?: IPaises;
   paisJsonInfo: any;
@@ -67,6 +69,10 @@ export class InformacoesPaisComponent implements OnInit, OnDestroy {
   
   showConteudoTexto: boolean = false;
   showModalError: boolean = false;
+
+  alfabetizacao: comboBox[] = [];
+  matriculas: comboBox[] = [];
+  subnutricao: comboBox[] = [];
 
   subs = new SubSink();
   repos: any;
@@ -237,18 +243,30 @@ export class InformacoesPaisComponent implements OnInit, OnDestroy {
         }
         //matriculas %
         else if (items.id === 77835) {
-          this.matriculasTotal = JSON.stringify(items.series[0].serie[49]);
-          this.matriculasTotal = this.matriculasTotal.slice(9, -2);
+          for (let cont = 1; cont < items.series[0].serie.length; cont ++) {
+            this.matriculasTotal = JSON.stringify(items.series[0].serie[cont]);
+            this.matriculasTotal = this.matriculasTotal.slice(1, -1);
+            let comboBoxPush = {value: this.matriculasTotal, viewValue: this.matriculasTotal};
+            this.matriculas.push(comboBoxPush);
+          } 
         } 
         // alfabetização %
         else if (items.id === 77836) {
-          this.alfabetizacaoTotal = JSON.stringify(items.series[0].serie[49]);
-          this.alfabetizacaoTotal = this.alfabetizacaoTotal.slice(9, -2);
+          for (let cont = 1; cont < items.series[0].serie.length; cont ++) {
+            this.alfabetizacaoTotal = JSON.stringify(items.series[0].serie[cont]);
+            this.alfabetizacaoTotal = this.alfabetizacaoTotal.slice(1, -1);
+            let comboBoxPush = {value: this.alfabetizacaoTotal, viewValue: this.alfabetizacaoTotal};
+            this.alfabetizacao.push(comboBoxPush);
+          } 
         }
         // subnutrição %
         else if (items.id === 77834) {
-          this.subnutricaoTotal = JSON.stringify(items.series[0].serie[47]);
-          this.subnutricaoTotal = this.subnutricaoTotal.slice(9, -2);
+          for (let cont = 1; cont < items.series[0].serie.length; cont ++) {
+            this.subnutricaoTotal = JSON.stringify(items.series[0].serie[cont]);
+            this.subnutricaoTotal = this.subnutricaoTotal.slice(1, -1);
+            let comboBoxPush = {value: this.subnutricaoTotal, viewValue: this.subnutricaoTotal};
+            this.subnutricao.push(comboBoxPush);
+          } 
         }
         // expectativa de vida
         else if (items.id === 77830) {
