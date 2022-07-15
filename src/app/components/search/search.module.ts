@@ -7,6 +7,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './search.component';
+import { EventService } from 'src/app/shared/event.service';
+import { PaisesService } from 'src/app/paises.service';
 
 @NgModule({
   declarations: [
