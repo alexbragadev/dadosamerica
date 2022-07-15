@@ -282,11 +282,13 @@ export class InformacoesPaisComponent implements OnInit, OnDestroy {
         else if (items.id === 77851) {
           this.natalidadeTotal = JSON.stringify(items.series[0].serie[48]);
           this.natalidadeTotal = this.natalidadeTotal.slice(9, -2);
+          this.natalidadeTotal = Number(this.natalidadeTotal).toFixed(2);
         }
         // mortalidade por mil
         else if (items.id === 77850) {
           this.mortalidadeTotal = JSON.stringify(items.series[0].serie[48]);
           this.mortalidadeTotal = this.mortalidadeTotal.slice(9, -2);
+          this.mortalidadeTotal = Number(this.mortalidadeTotal).toFixed(2);
         }
         // Assinaturas de telefonia celular a cada 100 habitantes
         else if (items.id === 77854) {

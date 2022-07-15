@@ -1,6 +1,7 @@
 #search-body {
   background-color: #b5b5b5;
   padding: 0.5em;
+  width: 100%;
 }
 
 #form-buscar {
@@ -18,6 +19,7 @@
   border-radius: 10px;
   border: 1px solid #fff;
   outline: none;
+  width: 100%;
 }
 
 #button-search {
@@ -35,5 +37,13 @@
     border-radius: 10px;
     padding-left: 1em;
     padding-right: 1em;
+  }
+
+  #buscar {
+    width: 450px;
+  }
+
+  #search-body {
+    width: 450px;
   }
 }
