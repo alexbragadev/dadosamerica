@@ -156,7 +156,6 @@ export class InformacoesPaisComponent implements OnInit, OnDestroy {
           
           this.indicadoresPaisFormt(this.paisJsonIndicadores);
 
-            console.log("função"+this.populacaoPais);
         }, (err) => {
           console.log("erro indicadores do país "+ err);
           this.showModalError = true;
