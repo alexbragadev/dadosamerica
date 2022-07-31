@@ -55,6 +55,9 @@ export class SearchComponent implements OnInit, OnDestroy {
     for (let pais of this.paises) {
       nomeMinusculoPais = pais.nome.toLocaleLowerCase();
       searchMinusculo = searchItem.toLocaleLowerCase();
+      // metodo que retira acentos
+      nomeMinusculoPais = nomeMinusculoPais.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+      searchMinusculo = searchMinusculo.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
       if (nomeMinusculoPais === searchMinusculo) {
          this.paisesService.recebePaisSelecionado(pais);
          this.pais = pais;
