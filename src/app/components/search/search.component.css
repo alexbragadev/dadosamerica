@@ -46,4 +46,9 @@
   #search-body {
     width: 450px;
   }
+
+  .alert {
+    margin-top: 2px;
+    border-radius: 10px;
+  }
 }

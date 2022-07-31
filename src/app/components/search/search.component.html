@@ -4,4 +4,7 @@
         aria-label="Search" [(ngModel)]="searchItem">
         <button id="button-search" type="submit" class="btn btn-secondary" (click)="pesquisarPais()"><i class="bi bi-search"></i></button>
     </form>
+    <div *ngIf="avisoDigitarPais" class="alert alert-warning" role="alert">
+        Digite o nome de um país da américa latina.
+    </div>
 </div>

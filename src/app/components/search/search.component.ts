@@ -19,6 +19,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   _searchItem: string = "";
   searchEncontrado: string = "";
   verificarPesquisa: boolean = false;
+  avisoDigitarPais: boolean = false;
 
   get searchItem(): string {
     return this._searchItem;
@@ -64,10 +65,13 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   pesquisarPais() {
     if (this.searchEncontrado) {
+      this.avisoDigitarPais = false;
       this.router.navigateByUrl('/home');
       setTimeout(() => {
         this.router.navigateByUrl('/informacoes-pais');
       });
+    } else {
+      this.avisoDigitarPais = true;
     }
   }
 
