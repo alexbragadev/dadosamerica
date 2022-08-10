@@ -52,25 +52,34 @@ div {
     display: flex;
     justify-content: center;
     list-style-type: none;
-    padding-bottom: 2em;
-    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-top: 1.5em;
+  }
+
+  #nav-list li#pre-hover {
+    color: #FF914D;
+    border-bottom: 5px solid #FF914D;
   }
 
   #nav-list li {
     cursor: pointer;
-    font-size: 12pt;
-    color: #4a4a4a;
-    margin: .5em;
+    font-size: 13pt;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #fff;
+    font-weight: 500;
+    margin: 1em;
+    border-bottom: 5px solid #343a40;
   }
 
   #nav-list li:hover {
-    color: #000;
+    color: #FF914D;
+    border-bottom: 5px solid #FF914D;
   }
 
   #section-nav {
-    border-top: 1px solid #9c9b9b;
-    border-bottom: 1px solid #9c9b9b;
-    background-color: #f0f0f0;
+    border-top: 1.8px solid #9c9b9b;
+    border-bottom: 1.8px solid #9c9b9b;
+    background-color: #343a40;
   }
 
 }

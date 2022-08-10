@@ -5,14 +5,14 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { HeaderModule } from 'src/app/components/header/header.module';
-import { HomeComponent } from './home.component';
+import { PerfilPaisesComponent } from './perfil-paises.component';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    PerfilPaisesComponent
   ],
   exports: [
-    HomeComponent
+    PerfilPaisesComponent
   ],
   imports: [
     BrowserModule,
@@ -25,4 +25,4 @@ import { HomeComponent } from './home.component';
   providers: [],
   bootstrap: []
 })
-export class HomeModule { }
+export class PerfilPaisesModule { }

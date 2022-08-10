@@ -1,8 +1,20 @@
 <div id="search-body">
     <form id="form-buscar">
-        <input id="buscar" name="search" type="search" placeholder="Pesquisar" 
-        aria-label="Search" [(ngModel)]="searchItem">
+        <input  id="buscar" 
+                name="search" 
+                type="text" 
+                placeholder="Pesquisar" 
+                aria-label="Search" 
+                [(ngModel)]="searchItem"
+                matInput
+                [formControl]="myControl"
+                [matAutocomplete]="auto">
         <button id="button-search" type="submit" class="btn btn-secondary" (click)="pesquisarPais()"><i class="bi bi-search"></i></button>
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{option}}
+            </mat-option>
+        </mat-autocomplete>
     </form>
     <div *ngIf="avisoDigitarPais" class="alert alert-warning" role="alert">
         Digite o nome de um país da américa latina.

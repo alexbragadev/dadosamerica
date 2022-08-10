@@ -1,10 +1,12 @@
 import { isNgTemplate } from '@angular/compiler';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { IPaises } from 'src/app/model/paises.model';
 import { PaisesService } from 'src/app/paises.service';
 import { EventService } from 'src/app/shared/event.service';
+import { FormControl } from '@angular/forms';
+import { map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-search',
@@ -12,6 +14,10 @@ import { EventService } from 'src/app/shared/event.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit, OnDestroy {
+
+  myControl = new FormControl('');
+  options: string[] = [];
+  filteredOptions?: Observable<string[]>;
 
   paises: IPaises[] = [];
   pais?: IPaises;
@@ -37,10 +43,20 @@ export class SearchComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.getPaisesSubscription = this.paisesService.getAllPaises().subscribe((data: IPaises[]) => {
       this.paises = data;
+
+      this.paises.forEach(e => {
+        this.options.push(e.nome);
+      });
+
       this.showInfo = true;
       }, (err) => {
         console.log("erro lista países " + err);
       });
+
+      this.filteredOptions = this.myControl.valueChanges.pipe(
+        startWith(''),
+        map(value => this._filter(value || '')),
+      );
   }
 
   ngOnDestroy() {
@@ -76,6 +92,12 @@ export class SearchComponent implements OnInit, OnDestroy {
     } else {
       this.avisoDigitarPais = true;
     }
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
 
 }

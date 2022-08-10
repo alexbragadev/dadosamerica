@@ -9,6 +9,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './search.component';
 import { EventService } from 'src/app/shared/event.service';
 import { PaisesService } from 'src/app/paises.service';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatInputModule} from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { PaisesService } from 'src/app/paises.service';
     BrowserAnimationsModule,
     NgxPaginationModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: []

@@ -7,10 +7,10 @@ import { InformacoesPaisComponent } from '../informacoes-pais/informacoes-pais.c
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  templateUrl: './perfil-paises.component.html',
+  styleUrls: ['./perfil-paises.component.css']
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class PerfilPaisesComponent implements OnInit, OnDestroy {
 
   paises: IPaises[] = [];
   showInfo: boolean =  false;

@@ -41,10 +41,15 @@
 
   #buscar {
     width: 450px;
+    border: none;
   }
 
   #search-body {
     width: 450px;
+  }
+  
+  input.mat-input-element {
+    margin-top: 0;
   }
 
   .alert {

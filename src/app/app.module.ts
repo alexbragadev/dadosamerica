@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './templates/home/home.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -12,16 +11,18 @@ import { HeaderModule } from './components/header/header.module';
 import { MenuModule } from './components/menu/menu.module';
 import { SearchModule } from './components/search/search.module';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeModule } from './templates/home/home.module';
+import { PerfilPaisesModule } from './templates/perfil-paises/perfil-paises.module';
 import { NgxMaskModule } from 'ngx-mask';
 import { EconomiaComponent } from './templates/economia/economia.component';
 import { SaudeComponent } from './templates/saude/saude.component';
+import { PaginaInicialComponent } from './templates/pagina-inicial/pagina-inicial.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EconomiaComponent,
-    SaudeComponent
+    SaudeComponent,
+    PaginaInicialComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +34,7 @@ import { SaudeComponent } from './templates/saude/saude.component';
     HeaderModule,
     MenuModule,
     SearchModule,
-    HomeModule,
+    PerfilPaisesModule,
     AppRoutingModule,
     NgxMaskModule.forRoot()
   ],
