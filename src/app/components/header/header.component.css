@@ -56,11 +56,6 @@ div {
     padding-top: 1.5em;
   }
 
-  #nav-list li#pre-hover {
-    color: #FF914D;
-    border-bottom: 5px solid #FF914D;
-  }
-
   #nav-list li {
     cursor: pointer;
     font-size: 13pt;
@@ -72,8 +67,8 @@ div {
   }
 
   #nav-list li:hover {
-    color: #FF914D;
-    border-bottom: 5px solid #FF914D;
+    color: #FF914D !important;
+    border-bottom: 5px solid #FF914D !important;
   }
 
   #section-nav {

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EconomiaComponent } from './economia.component';
+import { DadosGeraisComponent } from './dados-gerais.component';
 
-describe('EconomiaComponent', () => {
-  let component: EconomiaComponent;
-  let fixture: ComponentFixture<EconomiaComponent>;
+describe('DadosGeraisComponent', () => {
+  let component: DadosGeraisComponent;
+  let fixture: ComponentFixture<DadosGeraisComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EconomiaComponent ]
+      declarations: [ DadosGeraisComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EconomiaComponent);
+    fixture = TestBed.createComponent(DadosGeraisComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

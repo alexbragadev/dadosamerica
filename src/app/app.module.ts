@@ -13,14 +13,14 @@ import { SearchModule } from './components/search/search.module';
 import { AppRoutingModule } from './app-routing.module';
 import { PerfilPaisesModule } from './templates/perfil-paises/perfil-paises.module';
 import { NgxMaskModule } from 'ngx-mask';
-import { EconomiaComponent } from './templates/economia/economia.component';
+import { DadosGeraisComponent } from './templates/dados-gerais/dados-gerais.component';
 import { SaudeComponent } from './templates/saude/saude.component';
 import { PaginaInicialComponent } from './templates/pagina-inicial/pagina-inicial.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EconomiaComponent,
+    DadosGeraisComponent,
     SaudeComponent,
     PaginaInicialComponent
   ],

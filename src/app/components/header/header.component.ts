@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { NgStyle } from '@angular/common';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import $ from 'jquery';
 
 @Component({
@@ -9,29 +10,31 @@ import $ from 'jquery';
 export class HeaderComponent implements OnInit {
 
   listaMenu: any;
+  styleLi: string[] = [];
+  styleBorder: string[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
     this.listaMenu = $('.hover'); 
+    this.styleLi[0] = '#FF914D';
+    this.styleBorder[0] = '5px solid #FF914D';
   }
 
   listaMenuCheck(e?: any) {
-    console.log(e);
+    let cont = 0;
+
+    for (let item of this.listaMenu) {
+      if (e.target.innerText === item.innerText) {
+        this.styleLi[cont] = '#FF914D';
+        this.styleBorder[cont] = '5px solid #FF914D';
+      } else {
+        this.styleLi[cont] = '#fff';
+        this.styleBorder[cont] = '5px solid #343a40';
+      }
+      cont += 1;
+    }
+
   }
-
-  removerFoco() {
-    $('#pre-hover').css({color: '#fff', 'border-bottom': '5px solid #343a40'});
-  }
-
-  inserirFoco() {
-    $('#pre-hover').css({color: '#FF914D', 'border-bottom': '5px solid #FF914D'});
-  }
-
-
-  // color: #fff;
-  //   font-weight: 500;
-  //   margin: 1em;
-  //   border-bottom: 5px solid #343a40;
-
+  
 }

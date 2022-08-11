@@ -12,14 +12,41 @@
 </section>
 <section id="section-nav">
     <nav>
-        <ul id="nav-list" (click)="listaMenuCheck($event)">
-            <li class="hover" [routerLink]="['/home']" routerLinkActive="router-link-active">Página Inicial </li>
-            <li class="hover" [routerLink]="['/perfis']" routerLinkActive="router-link-active">Perfis dos Países </li>
-            <li class="hover" [routerLink]="['/economia']" routerLinkActive="router-link-active">Dados Gerais </li>
-            <li class="hover" [routerLink]="['/saude']" routerLinkActive="router-link-active">Línguas </li>
-            <li class="hover">Viver, trabalhar, estudar </li>
-            <li class="hover">Notícias </li>
-            <li class="hover">Embaixadas </li>
+        <ul id="nav-list" #ulMenu (click)="listaMenuCheck($event)">
+            <li #liHome class="hover" 
+                [routerLink]="['/pagina-inicial']" 
+                routerLinkActive="router-link-active"
+                [ngStyle]="{'color': styleLi[0], 'border-bottom': styleBorder[0]}">
+                Página Inicial 
+            </li>
+            <li class="hover" 
+                [routerLink]="['/perfis-paises']" 
+                routerLinkActive="router-link-active"
+                [ngStyle]="{'color': styleLi[1], 'border-bottom': styleBorder[1]}">
+                Perfis dos Países 
+            </li>
+            <li class="hover" 
+                [routerLink]="['/dados-gerais']" 
+                routerLinkActive="router-link-active"
+                [ngStyle]="{'color': styleLi[2], 'border-bottom': styleBorder[2]}">
+                Dados Gerais 
+            </li>
+            <li class="hover" [routerLink]="['/saude']" routerLinkActive="router-link-active"
+                [ngStyle]="{'color': styleLi[3], 'border-bottom': styleBorder[3]}">
+                Línguas 
+            </li>
+            <li class="hover"
+                [ngStyle]="{'color': styleLi[4], 'border-bottom': styleBorder[4]}">
+                Viver, trabalhar, estudar 
+            </li>
+            <li class="hover"
+                [ngStyle]="{'color': styleLi[5], 'border-bottom': styleBorder[5]}">
+                Notícias 
+            </li>
+            <li class="hover"
+                [ngStyle]="{'color': styleLi[6], 'border-bottom': styleBorder[6]}">
+                Embaixadas 
+            </li>
         </ul>
     </nav>
 </section>
