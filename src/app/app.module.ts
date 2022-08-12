@@ -15,14 +15,13 @@ import { PerfilPaisesModule } from './templates/perfil-paises/perfil-paises.modu
 import { NgxMaskModule } from 'ngx-mask';
 import { DadosGeraisComponent } from './templates/dados-gerais/dados-gerais.component';
 import { SaudeComponent } from './templates/saude/saude.component';
-import { PaginaInicialComponent } from './templates/pagina-inicial/pagina-inicial.component';
+import { PaginaInicialModule } from './templates/pagina-inicial/pagina-inicial.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     DadosGeraisComponent,
-    SaudeComponent,
-    PaginaInicialComponent
+    SaudeComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +34,7 @@ import { PaginaInicialComponent } from './templates/pagina-inicial/pagina-inicia
     MenuModule,
     SearchModule,
     PerfilPaisesModule,
+    PaginaInicialModule,
     AppRoutingModule,
     NgxMaskModule.forRoot()
   ],
