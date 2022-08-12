@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,300&family=Nanum+Myeongjo:wght@800&display=swap');
+
+@media (min-width: 992px) {
+    .div-noticia-principal {
+        position: relative;
+        margin-top: 4rem;
+    }
+
+    .div-img-noticia-principal {
+        margin-top: 4rem;
+    }
+
+    .img-noticia-principal {
+        width: 80%;
+        float: left;
+    }
+
+    .titulo-noticia-principal {
+        position: absolute;
+        font-family: 'Nanum Myeongjo', serif;
+        font-size: 20pt;
+        top: 3rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: justify !important;
+    }
+
+    .info-noticia-principal {
+        text-align: justify;
+        position: absolute;
+        font-size: 10pt;
+        color: #636363;
+        font-weight: bold;
+        top: 12rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .link-noticia-principal {
+        font-family: 'Cormorant', serif;
+        text-align: justify;
+        position: absolute;
+        font-size: 12pt;
+        font-weight: bold;
+        top: 17rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #hr-style {
+        height: 0.5px;
+        opacity: 1;
+        margin-top: 4rem;
+    }
+}
