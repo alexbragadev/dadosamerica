@@ -24,10 +24,6 @@ export class PaisesService {
 
     getAllPaises() : Observable<IPaises[]> {
         return this.http.get<IPaises[]>(`${ this.url }/all`)
-        // não conseguir usar com o pipe e map tenho que ver depois o que é isso
-        // .pipe(
-        //     map((response: any) => response.data)
-        // );
     }
 
     recebePaisSelecionado(pais: IPaises) {
@@ -48,29 +44,5 @@ export class PaisesService {
 
     getCidadesPorCodPais() {
         return this.http.get(`${ this.urlCidadesPais }=${this.pais?.countryId}`)
-        // .pipe(
-        //     map((response: any) => response.data)
-        // );
     }
-
-
-    /** Log a HeroService message with the MessageService */
-//     private log(message: string) {
-//         this.messageService.add(`HeroService: ${message}`);
-//     }
-
-//     const subscription = this.service.getAll()
-//   .subscribe(
-//     (data) => this.onSuccess(data),
-//     (error) => this.handleError(error)
-//   );
-
-// subscription.add(() => this.stopLoading());
-
-// this.service.getAll()
-// .subscribe(
-//     data => this.onSuccess(data),
-//     error => this.handleError(error),
-//     () => this.onComplete()
-// );
 }

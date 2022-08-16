@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { INoticias } from 'src/app/model/noticias.model';
+import { NoticiasService } from 'src/app/noticias.service';
 
 @Component({
   selector: 'app-pagina-inicial',
@@ -7,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginaInicialComponent implements OnInit {
 
-  noticiasQtd = [1,2,3,4,5,6,7,8,9,10];
+  noticias?: INoticias[];
 
-  constructor() { }
+  constructor(private noticia: NoticiasService) {}
 
   ngOnInit(): void {
+    this.noticia.getAllPaises().subscribe((data) => {
+      this.noticias = data;
+    });
   }
 
 }

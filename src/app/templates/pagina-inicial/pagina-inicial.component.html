@@ -16,8 +16,8 @@
   </div>
   <!-- noticias -->
   <div class="row justify-content-md-center">
-    <div class="col-lg-10" *ngFor="let noticia of noticiasQtd; let i = index">
-      <app-noticia></app-noticia>
+    <div class="col-lg-10" *ngFor="let noticia of noticias; let i = index">
+      <app-noticia [noticia]="noticia"></app-noticia>
     </div>
   </div>
 </section>
