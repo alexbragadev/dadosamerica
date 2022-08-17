@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NoticiaModule } from './noticia/noticia.module';
-import { PaginaInicialComponent } from './pagina-inicial.component';
+import { NoticiasComponent } from './noticias.component';
 
 @NgModule({
   declarations: [
-    PaginaInicialComponent
+    NoticiasComponent
   ],
   exports: [
-    PaginaInicialComponent
+    NoticiasComponent
   ],
   imports: [
     CommonModule,
@@ -17,4 +17,4 @@ import { PaginaInicialComponent } from './pagina-inicial.component';
   providers: [],
   bootstrap: []
 })
-export class PaginaInicialModule { }
+export class NoticiasModule { }

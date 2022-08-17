@@ -14,10 +14,10 @@
     <nav>
         <ul id="nav-list" #ulMenu (click)="listaMenuCheck($event)">
             <li #liHome class="hover" 
-                [routerLink]="['/pagina-inicial']" 
+                [routerLink]="['/noticias']" 
                 routerLinkActive="router-link-active"
                 [ngStyle]="{'color': styleLi[0], 'border-bottom': styleBorder[0]}">
-                Página Inicial 
+                Notícias 
             </li>
             <li class="hover" 
                 [routerLink]="['/perfis-paises']" 
@@ -41,7 +41,7 @@
             </li>
             <li class="hover"
                 [ngStyle]="{'color': styleLi[5], 'border-bottom': styleBorder[5]}">
-                Notícias 
+                Consulados 
             </li>
             <li class="hover"
                 [ngStyle]="{'color': styleLi[6], 'border-bottom': styleBorder[6]}">

@@ -1,11 +1,8 @@
-export interface INoticias {
+export interface INoticiaPrincipal {
     id: number;
     titulo: string;
     urlImg: string;
     resumo: string;
-    texto: string;
-    categoria: string;
     fonte: string;
-    dataNoticia: Date;
     linkDaNoticia: string;
 }

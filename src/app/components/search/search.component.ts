@@ -85,7 +85,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   pesquisarPais() {
     if (this.searchEncontrado) {
       this.avisoDigitarPais = false;
-      this.router.navigateByUrl('/pagina-inicial');
+      this.router.navigateByUrl('/noticias');
       setTimeout(() => {
         this.router.navigateByUrl('/informacoes-pais');
       });

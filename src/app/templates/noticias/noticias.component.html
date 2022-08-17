@@ -1,0 +1,33 @@
+<section class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-lg-10">
+      <p style="font-size: 10pt; font-weight: 600;">Notícias > Meio Ambiente</p>
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="col-lg-10">
+      <hr id="hr-style-2">
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-lg-6 div-noticia-principal">
+      <h2 class="titulo-noticia-principal">{{noticiaPrincipal?.titulo}}</h2>
+      <p class="info-noticia-principal">{{noticiaPrincipal?.resumo}}</p>
+      <p class="link-noticia-principal">Essa e outras notícias em <a [href]="noticiaPrincipal?.linkDaNoticia">{{noticiaPrincipal?.fonte}}.</a></p>
+    </div>
+    <div class="col-lg-6 div-img-noticia-principal">
+      <img class="img-noticia-principal" [src]="noticiaPrincipal?.urlImg" alt="">
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="col-lg-10">
+      <hr id="hr-style">
+    </div>
+  </div>
+  <!-- noticias -->
+  <div class="row justify-content-md-center">
+    <div class="col-lg-10" *ngFor="let noticia of noticias; let i = index">
+      <app-noticia [noticia]="noticia"></app-noticia>
+    </div>
+  </div>
+</section>
