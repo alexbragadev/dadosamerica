@@ -14,14 +14,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { PerfilPaisesModule } from './templates/perfil-paises/perfil-paises.module';
 import { NgxMaskModule } from 'ngx-mask';
 import { DadosGeraisComponent } from './templates/dados-gerais/dados-gerais.component';
-import { SaudeComponent } from './templates/saude/saude.component';
 import { NoticiasModule } from './templates/noticias/noticias.module';
+import { LinguasComponent } from './templates/linguas/linguas.component';
+import { EmbaixadasModule } from './templates/embaixadas/embaixadas.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     DadosGeraisComponent,
-    SaudeComponent
+    LinguasComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +33,7 @@ import { NoticiasModule } from './templates/noticias/noticias.module';
     InformacoesPaisModule,
     HeaderModule,
     MenuModule,
+    EmbaixadasModule,
     SearchModule,
     PerfilPaisesModule,
     NoticiasModule,

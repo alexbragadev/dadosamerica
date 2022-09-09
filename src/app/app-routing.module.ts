@@ -5,8 +5,9 @@ import { InformacoesPaisComponent } from './templates/informacoes-pais/informaco
 import { AppComponent } from './app.component';
 import { PerfilPaisesComponent } from './templates/perfil-paises/perfil-paises.component';
 import { DadosGeraisComponent } from './templates/dados-gerais/dados-gerais.component';
-import { SaudeComponent } from './templates/saude/saude.component';
 import { NoticiasComponent } from './templates/noticias/noticias.component';
+import { LinguasComponent } from './templates/linguas/linguas.component';
+import { EmbaixadasComponent } from './templates/embaixadas/embaixadas.component';
 
 
 export const routes: Routes = [
@@ -15,7 +16,8 @@ export const routes: Routes = [
   {path: 'perfis-paises', component: PerfilPaisesComponent},
   {path: 'informacoes-pais', component: InformacoesPaisComponent},
   {path: 'dados-gerais', component: DadosGeraisComponent},
-  {path: 'saude', component: SaudeComponent}
+  {path: 'linguas', component: LinguasComponent},
+  {path: 'embaixadas', component: EmbaixadasComponent}
 ]
 
 @NgModule({
