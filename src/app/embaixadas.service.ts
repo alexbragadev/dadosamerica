@@ -8,14 +8,18 @@ import { IEmbaixada } from './model/embaixadas.model';
 })
 export class EmbaixadasService {
 
-  urlEmbaixada = 'http://localhost:8080/embaixada/find';
+  urlEmbaixada = 'http://localhost:8080/embaixada/';
 
   constructor(
     private http: HttpClient
     ) { }
 
   getEmbaixadasById(paisNome: string): Observable<IEmbaixada[]> {
-      return this.http.get<IEmbaixada[]>(`${ this.urlEmbaixada }/${paisNome}`);
+      return this.http.get<IEmbaixada[]>(`${ this.urlEmbaixada }find/${paisNome}`);
   }
+
+  getAllEmbaixadas(): Observable<IEmbaixada[]> {
+    return this.http.get<IEmbaixada[]>(`${ this.urlEmbaixada }all`);
+}
   
 }
