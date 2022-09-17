@@ -16,6 +16,7 @@ export class EmbaixadasComponent implements OnInit {
   showInformacoesEmbaixada: boolean = false;
 
   embaixadasOriginal: IEmbaixada[] = [];
+  embaixadasList: IEmbaixada[] = [];
   embaixadas: IEmbaixada[] = [];
   embaixada?: IEmbaixada;
 
@@ -44,8 +45,10 @@ export class EmbaixadasComponent implements OnInit {
   }
 
   getEmbaixada(item: IEmbaixada) {
-    this.embaixada = item;
-    this.showInformacoesEmbaixada = true;
+    this.embaixadasService.getEmbaixadasById(item.nomePais.toLowerCase()).subscribe(data => {
+      this.embaixadasList = data;
+      this.showInformacoesEmbaixada = true;
+    });
   }
 
 }

@@ -19,19 +19,25 @@
                 </mat-card-actions>
               </mat-card>
         </div>
-        <div class="col-lg-8 div-emb">
-            <p>Informações Gerais</p>
-            <div *ngIf="showInformacoesEmbaixada">
-                <p>{{embaixada?.nome}}</p>
-                <p><span class="conf-info-embaixada">Endereço:</span> {{embaixada?.endereco}}</p>
-                <p><span class="conf-info-embaixada">Telefone:</span> {{embaixada?.telefone}}</p>
-                <p><span class="conf-info-embaixada">Fax:</span> {{embaixada?.fax}}</p>
-                <p><span class="conf-info-embaixada">Email:</span> {{embaixada?.email}}</p>
-                <p><span class="conf-info-embaixada">Website:</span> {{embaixada?.website}}</p>
-                <p><span class="conf-info-embaixada">Facebook:</span> {{embaixada?.facebook}}</p>
-                <p><span class="conf-info-embaixada">Twitter:</span> {{embaixada?.twitter}}</p>
-                <p><span class="conf-info-embaixada">Instagram:</span> {{embaixada?.instagram}}</p>
-                <p><span class="conf-info-embaixada">Horário de Atendimento:</span> {{embaixada?.horaAtendimento}}</p>
+        <div class="col-lg-8 div-emb" *ngIf="!showInformacoesEmbaixada">
+            <p class="infoGerais">Informações Gerais</p>
+            <hr>
+        </div>    
+        <div class="col-lg-8 div-emb" *ngIf="showInformacoesEmbaixada">
+            <p class="infoGerais">Informações Gerais</p>
+            <hr>
+            <div *ngFor="let embaixada of embaixadasList">
+                <p class="nomeEmbaixada">{{embaixada?.nome}}</p>
+                <p class="letraConfig"><span class="conf-info-embaixada">Endereço:</span> {{embaixada?.endereco}}</p>
+                <p class="letraConfig"><span class="conf-info-embaixada">Telefone:</span> {{embaixada?.telefone}}</p>
+                <p class="letraConfig"><span class="conf-info-embaixada">Fax:</span> {{embaixada?.fax}}</p>
+                <p class="letraConfig"><span class="conf-info-embaixada">Email:</span> {{embaixada?.email}}</p>
+                <p class="letraConfig"><span class="conf-info-embaixada">Website:</span> {{embaixada?.website}}</p>
+                <p class="letraConfig"><span class="conf-info-embaixada">Facebook:</span> {{embaixada?.facebook}}</p>
+                <p class="letraConfig"><span class="conf-info-embaixada">Twitter:</span> {{embaixada?.twitter}}</p>
+                <p class="letraConfig"><span class="conf-info-embaixada">Instagram:</span> {{embaixada?.instagram}}</p>
+                <p class="letraConfig"><span class="conf-info-embaixada">Horário de Atendimento:</span> {{embaixada?.horaAtendimento}}</p>
+                <hr>
             </div>
         </div>
     </div>
