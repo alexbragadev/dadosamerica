@@ -2,17 +2,16 @@
     <div class="row">
         <div class="col-lg-4 text-center div-emb">
             <mat-card class="example-card">
-                <mat-card-title>Shiba Inu</mat-card-title>
-                <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                <mat-card-title>Embaixadas</mat-card-title>
+                <mat-card-subtitle>Países da América Latina</mat-card-subtitle>
                 <mat-card-content>
-                  <p>This card indeterminates progress bar.</p>
-                  <p>oi</p>
+                  <p>Representações diplomáticas no exterior.</p>
                 </mat-card-content>
                 <mat-card-actions>
                     <mat-form-field appearance="fill" [color]="color" [style.width.px]="widthComboBox">
                     <mat-label>Selecione</mat-label>
                     <mat-select>
-                        <mat-option *ngFor="let item of embaixadas" [value]="item.nomePais">
+                        <mat-option *ngFor="let item of embaixadas" [value]="item.nomePais" (click)="getEmbaixada(item)">
                             {{item.nomePais}}
                         </mat-option>
                     </mat-select>
@@ -20,6 +19,20 @@
                 </mat-card-actions>
               </mat-card>
         </div>
-        <div class="col-lg-8 div-emb">informações</div>
+        <div class="col-lg-8 div-emb">
+            <p>Informações Gerais</p>
+            <div *ngIf="showInformacoesEmbaixada">
+                <p>{{embaixada?.nome}}</p>
+                <p><span class="conf-info-embaixada">Endereço:</span> {{embaixada?.endereco}}</p>
+                <p><span class="conf-info-embaixada">Telefone:</span> {{embaixada?.telefone}}</p>
+                <p><span class="conf-info-embaixada">Fax:</span> {{embaixada?.fax}}</p>
+                <p><span class="conf-info-embaixada">Email:</span> {{embaixada?.email}}</p>
+                <p><span class="conf-info-embaixada">Website:</span> {{embaixada?.website}}</p>
+                <p><span class="conf-info-embaixada">Facebook:</span> {{embaixada?.facebook}}</p>
+                <p><span class="conf-info-embaixada">Twitter:</span> {{embaixada?.twitter}}</p>
+                <p><span class="conf-info-embaixada">Instagram:</span> {{embaixada?.instagram}}</p>
+                <p><span class="conf-info-embaixada">Horário de Atendimento:</span> {{embaixada?.horaAtendimento}}</p>
+            </div>
+        </div>
     </div>
 </section>

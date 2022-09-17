@@ -13,21 +13,39 @@ export class EmbaixadasComponent implements OnInit {
   paisNome?: string;
   color: ThemePalette = 'warn';
   widthComboBox = 250;
+  showInformacoesEmbaixada: boolean = false;
 
+  embaixadasOriginal: IEmbaixada[] = [];
   embaixadas: IEmbaixada[] = [];
+  embaixada?: IEmbaixada;
 
   constructor(
     private embaixadasService: EmbaixadasService
   ) { }
 
   ngOnInit(): void {
-    // this.paisNome = "brasil";
-    // this.embaixadasService.getEmbaixadasById(this.paisNome).subscribe(data => {
-    //   console.log(data);
-    // })
     this.embaixadasService.getAllEmbaixadas().subscribe(data => {
-      this.embaixadas = data;
-    })
+      this.embaixadasOriginal = data;
+
+      this.embaixadas.push(this.embaixadasOriginal[0]);
+      this.embaixada = this.embaixadasOriginal[0];
+
+      for (let x = 0; x < this.embaixadasOriginal.length; x++) {
+        if (this.embaixada.nomePais != this.embaixadasOriginal[x].nomePais) {
+          this.embaixada = this.embaixadasOriginal[x];
+          this.embaixadas.push(this.embaixadasOriginal[x]);
+        }  
+      }
+
+      for (let y = 0; y < this.embaixadas.length; y++) {
+        this.embaixadas[y].nomePais = this.embaixadas[y].nomePais.toUpperCase();
+      }
+    });
+  }
+
+  getEmbaixada(item: IEmbaixada) {
+    this.embaixada = item;
+    this.showInformacoesEmbaixada = true;
   }
 
 }
