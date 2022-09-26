@@ -1,0 +1,41 @@
+<section class="container">
+    <div class="row">
+        <div class="col-lg-4 text-center div-emb">
+            <mat-card class="example-card">
+                <mat-card-title>Consulados</mat-card-title>
+                <mat-card-subtitle>Países da América Latina</mat-card-subtitle>
+                <mat-card-content>
+                  <p>Representação da administração pública.</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <mat-form-field appearance="fill" [color]="color" [style.width.px]="widthComboBox">
+                    <mat-label>Selecione</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let item of consulados" [value]="item.nomePais" (click)="getConsulado(item)">
+                            {{item.nomePais}}
+                        </mat-option>
+                    </mat-select>
+                    </mat-form-field>
+                </mat-card-actions>
+              </mat-card>
+        </div>
+        <div class="col-lg-8 div-emb" *ngIf="!showInformacoesConsulado">
+            <p class="infoGerais">Informações Gerais</p>
+            <hr>
+        </div>    
+        <div class="col-lg-8 div-emb" *ngIf="showInformacoesConsulado">
+            <p class="infoGerais">Informações Gerais</p>
+            <hr>
+            <div *ngFor="let consulado of consuladoList">
+                <p class="nomeEmbaixada">{{consulado?.nome}}</p>
+                <p class="letraConfig"><span class="conf-info-embaixada">Endereço:</span> {{consulado?.endereco}}</p>
+                <p class="letraConfig"><span class="conf-info-embaixada">Telefone:</span> {{consulado?.telefone}}</p>
+                <p class="letraConfig"><span class="conf-info-embaixada">Fax:</span> {{consulado?.fax}}</p>
+                <p class="letraConfig"><span class="conf-info-embaixada">Email:</span> {{consulado?.email}}</p>
+                <p class="letraConfig"><span class="conf-info-embaixada">Website:</span> {{consulado?.website}}</p>
+                <p class="letraConfig"><span class="conf-info-embaixada">Horário de Atendimento:</span> {{consulado?.horaAtendimento}}</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+</section>

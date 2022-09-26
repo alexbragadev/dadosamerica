@@ -17,6 +17,8 @@ import { DadosGeraisComponent } from './templates/dados-gerais/dados-gerais.comp
 import { NoticiasModule } from './templates/noticias/noticias.module';
 import { LinguasComponent } from './templates/linguas/linguas.component';
 import { EmbaixadasModule } from './templates/embaixadas/embaixadas.module';
+import { ConsuladoComponent } from './templates/consulado/consulado.component';
+import { ConsuladoModule } from './templates/consulado/consulado.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { EmbaixadasModule } from './templates/embaixadas/embaixadas.module';
     HeaderModule,
     MenuModule,
     EmbaixadasModule,
+    ConsuladoModule,
     SearchModule,
     PerfilPaisesModule,
     NoticiasModule,

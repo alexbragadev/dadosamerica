@@ -8,6 +8,7 @@ import { DadosGeraisComponent } from './templates/dados-gerais/dados-gerais.comp
 import { NoticiasComponent } from './templates/noticias/noticias.component';
 import { LinguasComponent } from './templates/linguas/linguas.component';
 import { EmbaixadasComponent } from './templates/embaixadas/embaixadas.component';
+import { ConsuladoComponent } from './templates/consulado/consulado.component';
 
 
 export const routes: Routes = [
@@ -17,7 +18,8 @@ export const routes: Routes = [
   {path: 'informacoes-pais', component: InformacoesPaisComponent},
   {path: 'dados-gerais', component: DadosGeraisComponent},
   {path: 'linguas', component: LinguasComponent},
-  {path: 'embaixadas', component: EmbaixadasComponent}
+  {path: 'embaixadas', component: EmbaixadasComponent},
+  {path: 'consulados', component: ConsuladoComponent}
 ]
 
 @NgModule({

@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,300&family=Nanum+Myeongjo:wght@800&display=swap');
+
+.example-card {
+    max-width: 400px;
+}
+
+.div-emb {
+    margin-top: 2rem;
+}
+
+.conf-info-embaixada {
+    font-weight: 500;
+}
+
+.nomeEmbaixada {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.letraConfig {
+    font-size: 12pt;
+}
+
+.infoGerais {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
