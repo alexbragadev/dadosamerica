@@ -1,0 +1,85 @@
+<section class="container">
+    <div class="row section-titulo justify-content-md-center text-center">
+        <div class="col-lg-8">
+            <h1 class="titulo-home">Viver, trabalhar, viajar.</h1>
+            <hr>
+            <p>A América Latina caracteriza-se pela sua diversidade cultural e linguística e as línguas faladas nos países constituem uma componente essencial do seu património cultural.</p>
+            <br>
+            <hr>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-lg-8">
+            <h3>As 10 melhores cidades da América Latina para viver:</h3>
+            <br>
+            <ul>
+                <li>1. Montevidéu, Uruguai</li>
+                <li>2. Buenos Aires, Argentina</li>
+                <li>3. San Juan, Porto Rico </li>
+                <li>4. Santiago, Chile </li>
+                <li>5. Cidade do Panamá, Panamá</li>
+                <li>6. Brasília, Brasil </li>
+                <li>7. San Jose, Costa Rica </li>
+                <li>8. Monterrey, México</li>
+                <li>9. Assunção, Paraguai</li>
+                <li>10. Rio de Janeiro, Brasil</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row section-titulo justify-content-md-center">
+        <div class="col-lg-8">
+            <hr>
+            <h3>Índice de Custo de Vida na América Latina:</h3>
+            <br>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="position">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="city">
+                  <th mat-header-cell *matHeaderCellDef> Cidade (País) </th>
+                  <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="price">
+                  <th mat-header-cell *matHeaderCellDef> Índice de Preços </th>
+                  <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+                </ng-container>
+              
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+        </div>
+    </div>
+    <div class="row section-titulo justify-content-md-center">
+        <div class="col-lg-8">
+            <hr>
+            <h3>As 10 melhores universidades da América Latina:</h3>
+            <br>
+            <table mat-table [dataSource]="dataSourceUnivsersity" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="position">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="nome">
+                  <th mat-header-cell *matHeaderCellDef> Nome </th>
+                  <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="pais">
+                  <th mat-header-cell *matHeaderCellDef> País </th>
+                  <td mat-cell *matCellDef="let element"> {{element.pais}} </td>
+                </ng-container>
+              
+              
+                <tr mat-header-row *matHeaderRowDef="universityColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: universityColumns;"></tr>
+              </table>
+        </div>
+    </div>
+</section>
