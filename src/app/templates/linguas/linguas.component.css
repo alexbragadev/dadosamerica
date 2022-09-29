@@ -1,0 +1,30 @@
+.titulo-home { 
+    font-size: 25pt;
+    font-weight: 300;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+p {
+    font-size: 13pt;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #636363;
+  }
+
+h3 {
+    font-size: 14pt;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}  
+
+ul>li {
+    list-style-type: none;
+    margin-bottom: 20px;
+    font-size: 13pt;
+}
+
+@media (min-width: 992px) {
+  
+}
+  
