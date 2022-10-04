@@ -1,7 +1,7 @@
 <section class="container">
     <div class="row section-titulo justify-content-md-center text-center">
         <div class="col-lg-8">
-            <h1 class="titulo-home">Viver, trabalhar, viajar.</h1>
+            <h1 class="titulo-home">Viver, estudar, viajar.</h1>
             <hr>
             <p>A América Latina caracteriza-se pela sua diversidade cultural e linguística e as línguas faladas nos países constituem uma componente essencial do seu património cultural.</p>
             <br>
@@ -10,22 +10,58 @@
     </div>
     <div class="row justify-content-md-center">
         <div class="col-lg-8">
-            <h3>As 10 melhores cidades da América Latina para viver:</h3>
+            <h3>5 lugares imperdíveis para visitar na América Latina:</h3>
             <br>
-            <ul>
-                <li>1. Montevidéu, Uruguai</li>
-                <li>2. Buenos Aires, Argentina</li>
-                <li>3. San Juan, Porto Rico </li>
-                <li>4. Santiago, Chile </li>
-                <li>5. Cidade do Panamá, Panamá</li>
-                <li>6. Brasília, Brasil </li>
-                <li>7. San Jose, Costa Rica </li>
-                <li>8. Monterrey, México</li>
-                <li>9. Assunção, Paraguai</li>
-                <li>10. Rio de Janeiro, Brasil</li>
+            <ul style="text-align: center;">
+                <li>1. Cataratas do Iguaçu, Brasil e Argentina</li>
+                <img src="../../../assets/img/cataratas.jpg" alt="" height="350px">
+                <p>O Rio Iguaçu nasce em Curitiba e percorre o Paraná até a cidade de Foz do Iguaçu, que por sua vez faz fronteira com Puerto Iguazú, na Argentina. Ali, toda a água do rio forma o maior sistema de cataratas do mundo, as Cataratas do Iguaçu. O nome vem do Guarani: y significa água e ûasu significa grande. É possível ver as cataratas entrando a pé nos parques de preservação, tanto pela parte argentina, quanto pela brasileira. Também se pode fazer um passeio de barco perto das quedas ou apreciar a vista de helicóptero.</p>
+                <li>2. Deserto do Atacama, Chile</li>
+                <img src="../../../assets/img/atacama.jpg" alt="" height="350px">
+                <p>O deserto mais seco do mundo é também o mais espetacular de todos. O Atacama tem vulcão, salares, lagoas, gêiseres, formações rochosas e um céu carregado de estrelas como você nunca viu. ‘Paisagens de outro planeta’ é o clichê mais usado para descrever o lugar.</p>
+                <li>3. Glaciar Perito Moreno, Argentina </li>
+                <img src="../../../assets/img/glaciar.jpg" alt="" height="350px">
+                <p>Localizado dentro do Parque Nacional los Glaciares, o Glaciar Perito Moreno ostenta 5 quilômetros de largura e 60 metros de altura. 
+
+                  O ponto de partida para quem deseja conhecer essa belezinha é a cidade de El Calafate.</p> 
+                <li>4. Machu Picchu, Peru </li>
+                <img src="../../../assets/img/peru-montanha.jpg" alt="" height="350px">
+                <p>Machu Picchu, a misteriosa cidade dos Incas, mistura o real e o imaginário em doses perfeitas de natureza, cultura e misticismo.
+
+                  Desde sua descoberta oficial, em 24 de julho de 1911 pelo norte americano Hiram Bingham, Machu Picchu, no Peru, é considerado um dos monumentos arqueológicos e arquitetônicos mais importantes do mundo.</p>
+                <li>5. Caye Caulker, Belize</li>
+                <img src="../../../assets/img/belize-praia.jpg" alt="" height="350px">
+                <p>Localizada em Belize, Caye Caulker é o lugar ideal para quem está em busca de relaxar, mergulhar, fazer snorkeling e curtir a vida sem pressa.</p>
             </ul>
         </div>
     </div>
+    <div class="row justify-content-md-center">
+      <div class="col-lg-8">
+          <h3>As 10 melhores cidades da América Latina para viver:</h3>
+          <br>
+            <table mat-table [dataSource]="dataSourceIdh" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="position">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="city">
+                  <th mat-header-cell *matHeaderCellDef> Cidade (País) </th>
+                  <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="idh">
+                  <th mat-header-cell *matHeaderCellDef> IDH: </th>
+                  <td mat-cell *matCellDef="let element"> {{element.idh}} </td>
+                </ng-container>
+              
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsIdh"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumnsIdh;"></tr>
+              </table>
+      </div>
+  </div>
     <div class="row section-titulo justify-content-md-center">
         <div class="col-lg-8">
             <hr>
