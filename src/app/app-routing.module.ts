@@ -21,7 +21,7 @@ export const routes: Routes = [
   {path: 'linguas', component: LinguasComponent},
   {path: 'embaixadas', component: EmbaixadasComponent},
   {path: 'consulados', component: ConsuladoComponent},
-  {path: 'live-work-study', component: LiveWorkStudyComponent}
+  {path: 'live-travel-study', component: LiveWorkStudyComponent}
 ]
 
 @NgModule({

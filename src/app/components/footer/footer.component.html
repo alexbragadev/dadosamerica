@@ -1,0 +1,54 @@
+<section id="header-section container" style="overflow: hidden;">
+    <div class="row footer-row">
+        <div class="col-lg-3 menu">
+            <nav>
+                <ul id="nav-list" (click)="listaMenuCheck($event)">
+                    <li  class="hover" 
+                        [routerLink]="['/noticias']" 
+                        routerLinkActive="router-link-active"
+                        >
+                        Notícias 
+                    </li>
+                    <li class="hover" 
+                        [routerLink]="['/perfis-paises']" 
+                        routerLinkActive="router-link-active"
+                        >
+                        Perfis dos Países 
+                    </li>
+                    <li class="hover" 
+                        [routerLink]="['/dados-gerais']" 
+                        routerLinkActive="router-link-active"
+                        >
+                        Dados Gerais 
+                    </li>
+                    <li class="hover" [routerLink]="['/linguas']" routerLinkActive="router-link-active"
+                        >
+                        Línguas 
+                    </li>
+                    <li class="hover" [routerLink]="['/live-travel-study']" routerLinkActive="router-link-active"
+                        >
+                        Viver, estudar, viajar 
+                    </li>
+                    <li class="hover" [routerLink]="['/consulados']" routerLinkActive="router-link-active"
+                        >
+                        Consulados 
+                    </li>
+                    <li class="hover" [routerLink]="['/embaixadas']" routerLinkActive="router-link-active"
+                        >
+                        Embaixadas 
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="col-lg-4 copy">
+            <p>Copyright © - 2022</p>
+        </div>
+
+        <div class="col-lg-4 redes">
+            <p>Redes Sociais</p>
+            <img src="../../../assets/img/instagram.png" width="35px" height="35px">
+        </div>
+    </div>
+</section>
+            

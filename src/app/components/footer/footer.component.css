@@ -1,0 +1,60 @@
+#header-section {
+    margin-top: 80px;
+}
+
+.footer-row {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.menu {
+
+}
+
+.copy {
+    align-self: center;
+}
+
+.copy p {
+    text-align: center;
+}
+
+.redes {
+    position: relative;
+    align-self: center;
+}
+
+.redes p {
+    text-align: center;
+}
+
+.redes img {
+    position: absolute;
+    display: flex;
+    right: 50%;
+    cursor: pointer;
+}
+
+#nav-list {
+    list-style-type: none;
+}
+
+#nav-list li {
+    cursor: pointer;
+}
+
+div {
+    background-color: #FF914D;
+}
+ 
+  
+  /* // Small devices (landscape phones, 576px and up)
+  @media (min-width: 576px) { [width]="420" [height]="70" logo }
+  
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) { ... }
+  
+  // Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+
+  }

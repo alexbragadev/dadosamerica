@@ -19,11 +19,13 @@ import { EmbaixadasModule } from './templates/embaixadas/embaixadas.module';
 import { ConsuladoModule } from './templates/consulado/consulado.module';
 import { LinguasModule } from './templates/linguas/linguas.module';
 import { LiveWorkStudyModule } from './templates/live-work-study/live-work-study.module';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DadosGeraisComponent
+    DadosGeraisComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
