@@ -32,16 +32,16 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 const ELEMENT_DATA_IDH: IdhElement[] = [
-  {position: 1, city: 'Nassau (Bahamas)', idh: 209},
-  {position: 2, city: 'Bridgetown (Barbados)', idh: 158},
-  {position: 3, city: 'Montevidéu (Uruguai)', idh: 138},
-  {position: 4, city: 'Panama City (Panamá)', idh: 134},
-  {position: 5, city: 'Caracas (Venezuela)', idh: 108},
-  {position: 6, city: 'Monterrei (México)', idh: 105},
-  {position: 7, city: 'San Salvador (El Salvador)	', idh: 105},
-  {position: 8, city: 'São Paulo (Brasil)', idh: 104},
-  {position: 9, city: 'Georgetown (Guiana)', idh: 102},
-  {position: 10, city: 'Quito (Equador)', idh: 99},
+  {position: 1, city: 'Chile', idh: 0.851},
+  {position: 2, city: 'Argentina', idh: 0.845},
+  {position: 3, city: 'Uruguai', idh: 0.817},
+  {position: 4, city: 'Panamá', idh: 0.815},
+  {position: 5, city: 'Barbados', idh: 0.814},
+  {position: 6, city: 'Bahamas', idh: 0.814},
+  {position: 7, city: 'Costa Rica', idh: 0.81},
+  {position: 8, city: 'Trinidade e Tobago', idh: 0.796},
+  {position: 9, city: 'Cuba', idh: 0.783},
+  {position: 10, city: 'Granada', idh: 0.779},
 ];
 
 const ELEMENT_DATA_UNIVERSITY: UniversityElement[] = [
