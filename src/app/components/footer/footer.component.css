@@ -11,6 +11,12 @@
 
 }
 
+li {
+    font-size: 10pt;
+    font-weight: 400;
+    line-height: 2;
+}
+
 .copy {
     align-self: center;
 }
@@ -32,6 +38,14 @@
     position: absolute;
     display: flex;
     right: 50%;
+    cursor: pointer;
+}
+
+.instagram {
+    position: absolute;
+    display: flex;
+    right: 35%;
+    font-weight: 300;
     cursor: pointer;
 }
 
